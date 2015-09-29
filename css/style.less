@@ -8,7 +8,7 @@
 
 
 @heading:                    60px;
-@heading-h2:                 50px;
+@heading-h2:                 45px;
 
 @body-h2:                    30px;
 @body-h4:                    22px;
@@ -20,7 +20,7 @@
 
 @headings-font:             'Avenir LT Std 85 Heavy', sans-serif;
 @body-font:                 'Avenir Book', sans-serif;
-@special-font:                 'Archer Medium Pro', serif;    
+@special-font:              'Archer Medium Pro', serif;    
 
 
 @font-face {
@@ -56,6 +56,7 @@ src: url('fonts/AvenirLTStd-Book.woff') format('woff');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: top;
+  background-color: red;
 
   filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");
   -webkit-filter: grayscale(100%);
@@ -78,7 +79,7 @@ src: url('fonts/AvenirLTStd-Book.woff') format('woff');
 
 
 .goodbye {
-  margin-top:220px;
+  margin-top:160px;
 
   h1 {
     color: white;
@@ -96,7 +97,8 @@ src: url('fonts/AvenirLTStd-Book.woff') format('woff');
 
 
 .bright {
-  margin: 80px 0px;
+  margin-top: 80px;
+  margin-bottom: 80px;
 }
 
 
@@ -137,17 +139,18 @@ src: url('fonts/AvenirLTStd-Book.woff') format('woff');
 }
 
 .trunk {
-  height: 700px;
+  height: 790px;
   width: 100%;
   background-image: url('../img/wings.png');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
+  background-color: yellow;
 }
 
 .trunk-text {
   .thomas;
-  margin-top: 100px;
+  margin-top: 170px;
   background-color: white;
 
   img {
@@ -168,6 +171,13 @@ src: url('fonts/AvenirLTStd-Book.woff') format('woff');
   }
 }
 
+@media (max-width: @screen-xs) {
+  .trunk-text {
+    margin-top: 80px;
+  }
+}
+
+
 
 .heartbreaker {
   height: 500px;
@@ -175,23 +185,39 @@ src: url('fonts/AvenirLTStd-Book.woff') format('woff');
   background-image: url('../img/heartbreaker.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: top;
+  background-position: bottom;
+  background-color: red;
+
+  filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  filter: gray;
+  /* IE 6-9 */
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+ 
+.heartbreaker {
+  &:hover {
+  filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0'/></filter></svg>#grayscale");
+  -webkit-filter: none;
+  filter: none;
+  }
 }
 
-
 .heartbreaker-text {
-  margin-top: 150px;
+  .thomas;
+  margin-top: 120px;
 
   img {
     padding-bottom: 40px;
   }
 
   p {
-    color: white;
-    font-family: @body-font;
-    font-size: @body-h4;
-    line-height: 1.8;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2)
+    background-color: white;
+    padding: 30px;
   }
 
  span {
@@ -199,14 +225,44 @@ src: url('fonts/AvenirLTStd-Book.woff') format('woff');
     color: red;
     font-family: @headings-font;
   }
+}
 
-  a {
-    font-size: @body-h4;
-    color: red;
-    font-family: @headings-font;
+@media (max-width: @screen-xs) {
+  .heartbreaker-text {
+    margin-top: 100px;
   }
 }
 
+.footer {
+  img {
+    width: 50px;
+  }
+
+  p {
+    color: @lightgrey-color;
+    font-family: @body-font;
+    font-size: @body-copy;
+    line-height: 1.8;
+  }
+
+  a {
+    text-decoration: none;
+    color: red;
+    font-size: @body-copy;
+    font-family: @headings-font;
+  }
+
+}
+
+.footerbackground {
+  height: 550px;
+  width: 100%;
+  background-image: url('../img/bright.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: bottom;
+  background-color: lightgrey;
+}
 
 .down-arrow {
   margin-top: 60px;
